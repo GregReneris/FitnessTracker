@@ -20,7 +20,8 @@ var mongoose = require('mongoose');
 
 const Fitness = require("./schema.js");
 
-mongoose.connect('mongodb://localhost/fitness', { useNewUrlParser: true });
+// mongoose.connect('mongodb://localhost/fitness', { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fitness", { useNewUrlParser: true });
 //
 var path = require("path");
 
