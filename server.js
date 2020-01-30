@@ -116,6 +116,16 @@ app.post("/api/workouts", (req, res) => {
 });
 
 
+app.get("/api/workouts/range",(req,res)=>{
+    Fitness.find({})
+    .then(data => {
+        res.json(data);
+    })
+    .catch(e => {
+        res.status(500)
+    })
+});
+
 
 
 app.listen(3000, () => {
