@@ -23,6 +23,7 @@ const Fitness = require("./schema.js");
 // mongoose.connect('mongodb://localhost/fitness', { useNewUrlParser: true });
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fitness", { useNewUrlParser: true });
 //
+const PORT = process.env.PORT || 3000;
 var path = require("path");
 
 const db = mongojs(databaseUrl, collections);
@@ -129,6 +130,6 @@ app.get("/api/workouts/range",(req,res)=>{
 
 
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log("App running on port 3000!");
 });
